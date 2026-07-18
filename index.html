@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzannStudios | Premium Game Developer Utilities</title>
+    <style>
+        /* ==========================================================================
+           RESET & ESTILOS BASE - ATMÓSFERA OSCURA UNREAL ENGINE 5
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Cabecera Principal */
+        header {
+            text-align: center;
+            padding: 50px 20px 20px 20px;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #888888;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           CONTENEDOR CENTRAL DE TARJETAS DE PRODUCTOS (GRID SIMÉTRICO)
+           ========================================================================== */
+        .main-container {
+            max-width: 1100px;
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap; /* Flexibilidad responsiva para celulares */
+            flex: 1;
+        }
+
+        /* Tarjeta Estándar de Producto */
+        .product-card {
+            background-color: #141414;
+            border: 1px solid #222222;
+            border-radius: 12px;
+            width: 450px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Imagen Representativa del Software */
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #1a1a1a;
+            background-color: #0b0b0b;
+        }
+
+        .product-info {
+            text-align: center;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        .product-info h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .product-info p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            padding: 0 10px;
+        }
+
+        /* ==========================================================================
+           COMPORTAMIENTOS DINÁMICOS E IDENTIDAD VISUAL POR ENTORNOS
+           ========================================================================== */
+
+        /* Variante 1: Tarjeta de Fortnite (Activa) */
+        .card-fortnite:hover {
+            transform: translateY(-8px);
+            border-color: #007acc; /* Acento cian gaming */
+            box-shadow: 0 12px 30px rgba(0, 122, 204, 0.15);
+        }
+        .card-fortnite:hover h2 {
+            color: #007acc;
+        }
+
+        /* Botón de Acción Fortnite */
+        .btn-action {
+            width: 100%;
+            background-color: #007acc;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: background-color 0.2s ease;
+        }
+        .card-fortnite:hover .btn-action {
+            background-color: #0099ff;
+        }
+
+        /* Variante 2: Tarjeta de Roblox (Deshabilitada de forma estática) */
+        .card-roblox {
+            cursor: not-allowed;
+            opacity: 0.55;
+            filter: grayscale(40%);
+        }
+        .card-roblox .product-info h2 {
+            color: #e24634; /* Rojo/Naranja Studio */
+        }
+
+        /* Etiqueta flotante premium "Coming Soon" */
+        .badge-coming-soon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e24634;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(226, 70, 52, 0.3);
+        }
+
+        .btn-disabled {
+            width: 100%;
+            background-color: #222222;
+            color: #666666;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            border: 1px solid #333333;
+        }
+
+        /* Pie de página corporativo */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #555555;
+            font-size: 0.85rem;
+            width: 100%;
+            border-top: 1px solid #141414;
+            background-color: #0d0d0d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA DE MARCA -->
+    <header>
+        <h1>EzannStudios</h1>
+        <p>Advanced client-side utilities engineered exclusively for modern map creators and independent game studios.</p>
+    </header>
+
+    <!-- CUERPO DE PRODUCTOS EN PARALELO (50/50 CENTRADO) -->
+    <main class="main-container">
+
+        <!-- TARJETA 1: ENTORNO FORTNITE / UEFN (ACTIVA) -->
+        <a href="https://ezannstudios.github.io/uefn-optimizer-website/" class="product-card card-fortnite">
+            <!-- Imagen representativa de UEFN -->
+            <img src="https://github.io" alt="UEFN Assets Optimizer Pro" class="product-image" 
+                 onerror="this.src='https://unsplash.com';">
+            
+            <div class="product-info">
+                <h2>UEFN Assets Optimizer</h2>
+                <p>Bypass Epic Games' cellular memory calculation limits. Batch process raw image assets into native GPU-compliant BC7/DXT5 DDS textures locally.</p>
+            </div>
+            
+            <div class="btn-action">Enter Storefront</div>
+        </a>
+
+        <!-- TARJETA 2: ENTORNO ROBLOX STUDIO (COMING SOON) -->
+        <div class="product-card card-roblox">
+            <span class="badge-coming-soon">Coming Soon</span>
+            
+            <!-- Imagen representativa de Roblox (Sustituible por tu infografía naranja) -->
+            <img src="https://unsplash.com" alt="Roblox Assets Optimizer Pro" class="product-image">
+            
+            <div class="product-info">
+                <h2>Roblox Assets Optimizer</h2>
+                <p>Maximize mobile device compatibility and frame rate. Downscale textures to strict 1024px barriers and index channels via an automated PBR SurfaceAppearance packer.</p>
+            </div>
+            
+            <div class="btn-disabled">Locked</div>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        &copy; 2026 EzannStudios. All tools run 100% locally and serverless. All rights reserved.
+    </footer>
+
+</body>
+</html>
