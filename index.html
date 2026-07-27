@@ -145,14 +145,22 @@
             background-color: #0099ff;
         }
 
-        /* Variante 2: Tarjeta de Roblox (Deshabilitada de forma estática) */
-        .card-roblox {
-            cursor: not-allowed;
-            opacity: 0.55;
-            filter: grayscale(40%);
+        /* Variante 2: Tarjeta de Roblox (Activa) */
+        .card-roblox:hover {
+            transform: translateY(-8px);
+            border-color: #e24634; /* Acento rojo/naranja Roblox Studio */
+            box-shadow: 0 12px 30px rgba(226, 70, 52, 0.15);
         }
-        .card-roblox .product-info h2 {
-            color: #e24634; /* Rojo/Naranja Studio */
+        .card-roblox:hover h2 {
+            color: #e24634;
+        }
+
+        /* Botón de Acción Roblox */
+        .card-roblox .btn-action {
+            background-color: #e24634;
+        }
+        .card-roblox:hover .btn-action {
+            background-color: #ff5c42;
         }
 
         /* Etiqueta flotante premium "Coming Soon" */
@@ -200,47 +208,47 @@
 </head>
 <body>
 
-    <!-- CABECERA DE MARCA -->
-    <header>
-        <h1>EzannStudios</h1>
-        <p>Advanced client-side utilities engineered exclusively for modern map creators and independent game studios.</p>
-    </header>
+<!-- CABECERA DE MARCA -->
+<header>
+    <h1>EzannStudios</h1>
+    <p>Advanced client-side utilities engineered exclusively for modern map creators and independent game studios.</p>
+</header>
 
-    <!-- CUERPO DE PRODUCTOS EN PARALELO (50/50 CENTRADO) -->
-    <main class="main-container">
+<!-- CUERPO DE PRODUCTOS EN PARALELO (50/50 CENTRADO) -->
+<main class="main-container">
 
-        <!-- TARJETA 1: ENTORNO FORTNITE / UEFN (ACTIVA) -->
-        <a href="https://ezannstudios.github.io/uefn-optimizer-website/" class="product-card card-fortnite">
-            <!-- Imagen representativa de UEFN -->
-            <img src="banner_uefn.png" alt="UEFN Assets Optimizer Pro" class="product-image">
-            
-            <div class="product-info">
-                <h2>UEFN Assets Optimizer</h2>
-                <p>Stay under Epic Games' Memory limits and pack ORM textures. Batch process raw image assets into UEFN-ready, import-safe PNG/JPG/TGA textures — locally, on your PC.</p>
-            </div>
-            
-            <div class="btn-action">Enter Storefront</div>
-        </a>
+    <!-- TARJETA 1: ENTORNO FORTNITE / UEFN (ACTIVA) -->
+    <a href="https://ezannstudios.github.io/uefn-optimizer-website/" class="product-card card-fortnite">
+        <!-- Imagen representativa de UEFN -->
+        <img src="banner_uefn.png" alt="UEFN Assets Optimizer Pro" class="product-image">
 
-        <!-- TARJETA 2: ENTORNO ROBLOX STUDIO (COMING SOON) -->
-        <a href="https://ezannstudios.github.io/roblox-optimizer-website/" class="product-card card-roblox">
-            <!-- Imagen representativa de Roblox (Sustituible por tu infografía naranja) -->
-            <img src="banner_roblox.png" alt="Roblox Assets Optimizer Pro" class="product-image">
-            
-            <div class="product-info">
-                <h2>Roblox Assets Optimizer</h2>
-                <p>Maximize mobile device compatibility and frame rate. Downscale textures to strict 1024px barriers and index channels via an automated PBR SurfaceAppearance packer.</p>
-            </div>
-            
-            <div class="btn-action">Enter Storefront</div>
-        </a>
+        <div class="product-info">
+            <h2>UEFN Assets Optimizer</h2>
+            <p>Stay under Epic Games' Memory limits and pack ORM textures. Batch process raw image assets into UEFN-ready, import-safe PNG/JPG/TGA textures — locally, on your PC.</p>
+        </div>
 
-    </main>
+        <div class="btn-action">Enter Storefront</div>
+    </a>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        &copy; 2026 EzannStudios. All tools run 100% locally and serverless. All rights reserved.
-    </footer>
+    <!-- TARJETA 2: ENTORNO ROBLOX STUDIO (COMING SOON) -->
+    <a href="https://ezannstudios.github.io/roblox-optimizer-website/" class="product-card card-roblox">
+        <!-- Imagen representativa de Roblox (Sustituible por tu infografía naranja) -->
+        <img src="banner_roblox.png" alt="Roblox Assets Optimizer Pro" class="product-image">
+
+        <div class="product-info">
+            <h2>Roblox Assets Optimizer</h2>
+            <p>Maximize mobile device compatibility and frame rate. Downscale textures to strict 1024px barriers and index channels via an automated PBR SurfaceAppearance packer.</p>
+        </div>
+
+        <div class="btn-action">Enter Storefront</div>
+    </a>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+    &copy; 2026 EzannStudios. All tools run 100% locally and serverless. All rights reserved.
+</footer>
 
 </body>
 </html>
